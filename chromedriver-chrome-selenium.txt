@@ -1,0 +1,15 @@
+Link: https://stackoverflow.com/questions/63290844/how-to-run-selenium-chromedriver-from-python3-on-wsl2
+Download ChromeDriver on WSL2:
+1. Install chromdriver
+wget -N http://chromedriver.storage.googleapis.com/113.0.5672.63/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+chmod +x chromedriver
+sudo mv -f chromedriver /usr/local/share/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+
+2. Install Chrome 
+sudo apt-get update
+sudo apt-get install -y wget curl unzip xvfb libxi6 libgconf-2-4 fonts-liberation
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
