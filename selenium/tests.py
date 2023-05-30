@@ -1,7 +1,13 @@
+import os
+import pathlib
+import unittest
+
 from selenium import webdriver
-from time import sleep
+from selenium.webdriver.common.by import By
 
-browser = webdriver.Chrome()
-browser.get("https://www.google.com")
+# Finds the Uniform Resourse Identifier of a file
+def file_uri(filename):
+    return pathlib.Path(os.path.abspath(filename)).as_uri()
 
-sleep(60)
+# Sets up web driver using Google chrome
+driver = webdriver.Chrome()
